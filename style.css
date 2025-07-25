@@ -41,20 +41,16 @@ nav {
   width: 140px;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
-  z-index: 101;
-}
-
+.menu-toggle,
 .menu-cancel {
   display: none;
   font-size: 28px;
   color: #fff;
   cursor: pointer;
   z-index: 102;
+}
+
+.menu-cancel {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -94,7 +90,8 @@ nav ul li a:hover::after {
 
 /* ========== Header Text ========== */
 .header-text {
-  margin-top: 20%;
+  margin-top: 0;
+  padding-top: 60px;
   font-size: 30px;
 }
 
@@ -127,6 +124,7 @@ nav ul li a:hover::after {
   box-shadow: 0 4px 15px rgba(255, 0, 79, 0.3);
   transition: transform 0.3s ease;
 }
+
 .about-img:hover {
   transform: scale(1.05);
 }
@@ -214,22 +212,6 @@ nav ul li a:hover::after {
   font-size: 16px;
 }
 
-/* Animation */
-.fade-in {
-  animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
 /* ========== Services Section ========== */
 #services {
   padding: 30px 0;
@@ -303,7 +285,7 @@ nav ul li a:hover::after {
 .layer {
   width: 100%;
   height: 0%;
-  background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -449,7 +431,8 @@ form .btn2 {
   }
 
   .header-text {
-    margin-top: 100%;
+    margin-top: 0;
+    padding-top: 60px;
     font-size: 16px;
   }
 
@@ -463,6 +446,21 @@ form .btn2 {
 
   .menu-cancel {
     display: none;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #080808;
+    z-index: 999;
+    padding: 10px 10%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .container {
+    padding-top: 60px; /* Push content down so it's not hidden under the sticky navbar */
   }
 
   nav ul {
@@ -535,12 +533,18 @@ form .btn2 {
   }
 }
 
-/* Fade-in animation for tabs */
+/* ========== Fade-in Animation ========== */
 .fade-in {
   animation: fadeIn 0.6s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
