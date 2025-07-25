@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santhosh.D Portfolio</title>
+  <link rel="icon" type="image/jpg" href="images/fav.png">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/3143154987.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ===== HEADER SECTION ===== -->
+  <div id="header">
+    <div class="container">
+      <nav>
+  <img src="/images/logo.jpg" class="logo" alt="Santhosh Logo" />
+
+  <!-- Hamburger Menu Icon -->
+  <div id="menu-toggle" class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Cancel Icon -->
+  <div id="menu-cancel" class="menu-cancel" onclick="closeMenu()">
+    <i class="fas fa-times"></i>
+  </div>
+
+  <!-- Navigation Links -->
+  <ul id="sidemenu">
+    <li><a href="#header" onclick="closeMenu()">Home</a></li>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#services" onclick="closeMenu()">Service</a></li>
+    <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
+</nav>
+
+
+      <div class="header-text">
+        <p>Java Full Stack Developer</p>
+        <h1>Hi, I am <span>Santhosh D</span><br>From Chennai</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT SECTION ===== -->
+<div id="about">
+  <div class="container about-container">
+    <div class="about-col-1">
+      <img src="/images/img_about.jpg" alt="Profile Image" class="about-img" />
+    </div>
+    <div class="about-col-2">
+      <h1 class="sub-title">About Me</h1>
+      <p class="about-intro">I am a passionate Full Stack Developer skilled in Java, Spring Boot, MySQL, and front-end development.</p>
+
+      <div class="tab-titles">
+        <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
+        <p class="tab-links" onclick="opentab('certifications', event)">Certifications</p>
+        <p class="tab-links" onclick="opentab('education', event)">Education</p>
+      </div>
+
+      <div class="tab-contents active-tab fade-in" id="skills">
+        <ul>
+          <li><span>Java Full Stack Developer</span><br>Java, Spring Boot, MySQL, REST APIs, MVC, Postman, Git</li>
+          <li><span>Front-End Developer</span><br>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</li>
+          <li><span>Back-End Developer</span><br>Core Java, MySQL, JDBC, Spring Boot</li>
+        </ul>
+      </div>
+
+      <div class="tab-contents fade-in" id="certifications">
+        <ul>
+          <li><span>Java Full Stack – Besant Technologies</span><br>Certified in Java, Spring Boot, REST API</li>
+          <li><span>JavaScript Essentials – Cisco</span><br>Certified in JavaScript fundamentals & DOM</li>
+          <li><span>Intern – Forage Web Dev Program</span><br>Simulated backend & form handling projects</li>
+        </ul>
+      </div>
+
+      <div class="tab-contents fade-in" id="education">
+        <ul>
+          <li><span>B.Sc. Computer Science</span><br>A.M. Jain College, 2021–2024 — CGPA: 6.93</li>
+          <li><span>HSC</span><br>WTMM Hr. Sec. School, 2020–2021 — CGPA: 8.21</li>
+          <li><span>SSLC</span><br>Govt Hr. Sec. School, 2018–2019 — CGPA: 7.14</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title">My Services</h1>
+      <div class="services-list">
+        <div>
+          <i class="fa-solid fa-layer-group"></i>
+          <h2>Full Stack Developer</h2>
+          <p>Building responsive, scalable, and efficient full stack applications.</p>
+          <a href="https://github.com/santhosh-07-sandy/JAVA-Tutorial">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>Front End Developer</h2>
+          <p>Creating user-friendly UI/UX with modern technologies.</p>
+          <a href="https://github.com/santhosh-07-sandy/TO-DO-LIST">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-java"></i>
+          <h2>Back End Developer</h2>
+          <p>Server-side logic and database management using Java and MySQL.</p>
+          <a href="https://github.com/santhosh-07-sandy/MySQL-Tutorial">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PORTFOLIO SECTION ===== -->
+  <div id="portfolio">
+    <div class="container">
+      <h1 class="sub-title">My Work</h1>
+      <div class="work-list">
+        <div class="work">
+          <img src="/images/img_1.jpg" alt="Bus Booking System">
+          <div class="layer">
+            <h3>Bus Booking Management System</h3>
+            <p>Developed by using Core Java and JDBC.</p>
+            <a href="https://github.com/santhosh-07-sandy/Bus-Booking-Management-System"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="/images/img_2.jpg" alt="To Do List App">
+          <div class="layer">
+            <h3>To Do List | Web App</h3>
+            <p>Developed by using HTML, CSS, and JavaScript.</p>
+            <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="/images/img_3.jpg" alt="Portfolio Website">
+          <div class="layer">
+            <h3>Personal Portfolio Website</h3>
+            <p>Developed by using HTML5, CSS3, and JavaScript.</p>
+            <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn">See More</a>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p><i class="fa-solid fa-envelope"></i> santhosh1917sant@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i> 9751326917</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/santhosh2k3/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/santhosh-07-sandy"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.hackerrank.com/profile/santhosh_07"><i class="fa-brands fa-hackerrank"></i></a>
+          </div>
+          <a href="My_CV.pdf" download class="btn btn2">Download CV</a>
+        </div>
+        <div class="contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required />
+            <input type="email" name="Email" placeholder="Your Email" required />
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER SECTION ===== -->
+  <div class="copyright">
+    <p>&copy; 2025 Santhosh D. Made With <i class="fa-solid fa-heart"></i>. All Rights Reserved.</p>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
