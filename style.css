@@ -445,7 +445,7 @@ form .btn2 {
 /* ========== Responsive (Mobile) ========== */
 @media only screen and (max-width: 768px) {
   #header {
-    background-image: url(/images/img_portrait.jpg);
+    background-image: url(images/img_portrait.jpg);
   }
 
   .header-text {
