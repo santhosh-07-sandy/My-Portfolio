@@ -45,7 +45,7 @@ document.querySelectorAll("nav ul li a").forEach((link) => {
 });
 
 // ===== Google Sheets Contact Form Submit =====
-const scriptURL = "https://script.google.com/macros/s/AKfycbxhr4G_PJ7yPok4f5cdF7yqY2S1IQim9QPLeojmQ7aexb9c-3glLT2NjmJGMjxmU4Qm/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzpftpZi-1WRRBTnk5AFU9SnfUFZ0_fwrxGVA3gEooYPA1D7gAYIujJWkkkVSudef4w/exec";
 const form = document.forms["submit-to-google-sheet"];
 const msg = document.getElementById("msg");
 const submitButton = form?.querySelector("button[type='submit']");
