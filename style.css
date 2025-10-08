@@ -469,6 +469,24 @@ form .btn2 {
   .menu-cancel {
     display: none !important;
   }
+
+  /* Make the navigation sticky on tablet/desktop and add spacing so content is not hidden */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(8, 8, 8, 0.6); /* semi-transparent so background image still shows */
+    z-index: 999;
+    padding: 10px 6%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+  }
+
+  /* Push page content down so the fixed nav does not overlap it */
+  .container {
+    padding-top: 70px; /* adjust if your nav height changes */
+  }
 }
 
 .copyright i {
