@@ -463,6 +463,14 @@ form .btn2 {
   }
 }
 
+/* Ensure hamburger/menu icons are hidden on all non-mobile widths */
+@media only screen and (min-width: 769px) {
+  .menu-toggle,
+  .menu-cancel {
+    display: none !important;
+  }
+}
+
 .copyright i {
   color: #ff004f;
 }
