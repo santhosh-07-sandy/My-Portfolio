@@ -421,6 +421,48 @@ form .btn2 {
   font-size: 14px;
 }
 
+/* ========== Responsive (Laptop / Tablet landscape) ========== */
+/* Improve navbar spacing and scale header text for medium screens (laptops) */
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  .container {
+    padding: 10px 6%;
+  }
+
+  nav ul {
+    gap: 12px;
+    flex-wrap: wrap; /* allow items to wrap instead of overflowing */
+    align-items: center;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .header-text {
+    padding-top: 40px;
+    font-size: 22px;
+  }
+
+  .header-text h1 {
+    font-size: 44px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1400px) {
+  /* Slightly larger laptops */
+  nav ul {
+    gap: 14px;
+  }
+
+  nav ul li a {
+    font-size: 17px;
+  }
+}
+
 .copyright i {
   color: #ff004f;
 }
