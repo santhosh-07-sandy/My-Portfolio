@@ -15,6 +15,22 @@ body {
   color: #fff;
 }
 
+/* Tooltip for skills popup */
+.skills-tooltip {
+  position: absolute;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0a0a0a;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+}
+.skills-tooltip.hidden { display: none; }
+
 /* ========== Header Section ========== */
 #header {
   width: 100%;
@@ -213,6 +229,22 @@ nav ul li a:hover::after {
   font-size: 16px;
 }
 
+/* See more arrow under About -> Skills */
+.see-more-skill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #ff004f;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.see-more-skill:hover { background: #ff004f; transform: translateY(-1px); }
+
 /* ========== Services Section ========== */
 #services {
   padding: 30px 0;
@@ -258,6 +290,191 @@ nav ul li a:hover::after {
   transform: translateY(-10px);
 }
 
+/* ===== Services interactions ===== */
+.services-list div {
+  cursor: pointer;
+}
+
+/* ===== Skills Bottom Sheet Popup ===== */
+.skills-popup.hidden {
+  display: none;
+}
+
+.skills-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.skills-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.skills-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #111;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.4);
+  transform: translateY(100%);
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skills-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.skills-close {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+/* Skill item: icon + percentage meter */
+.skills-grid .skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.skills-grid .skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  background: #1b1b1b;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform 200ms ease, box-shadow 220ms ease, border-color 200ms ease;
+  will-change: transform;
+}
+
+.skills-grid .skill-icon i {
+  font-size: 36px;
+}
+
+.skills-grid .skill-icon:hover,
+.skills-grid .skill-icon:focus-visible,
+.skills-grid .skill-item:hover .skill-icon,
+.skills-grid .skill-item:focus-within .skill-icon {
+  transform: translateY(-6px) scale(1.04);
+  border-color: rgba(255,255,255,0.25);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35), 0 0 0 2px rgba(255,255,255,0.06) inset;
+  outline: none;
+}
+
+.skills-grid .skill-icon:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+/* Ensure GitHub logo is white for better contrast on dark tile */
+.skills-grid .skill-icon i.devicon-github-original {
+  color: #ffffff !important;
+}
+
+/* Percentage meter */
+.skill-meter {
+  width: 100%;
+}
+
+.skill-meter .meter-track {
+  width: 100%;
+  height: 12px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-meter .meter-fill {
+  width: 0;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Centered percentage label overlay for better readability */
+.skill-meter .meter-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  background: rgba(0,0,0,0.65);
+  padding: 2px 8px;
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Level colors */
+.meter-beginner { background: linear-gradient(90deg, #fde68a, #f59e0b); box-shadow: 0 0 8px rgba(245,158,11,0.35); }
+.meter-intermediate { background: linear-gradient(90deg, #99f6e4, #06b6d4); box-shadow: 0 0 8px rgba(6,182,212,0.35); }
+.meter-advanced { background: linear-gradient(90deg, #bbf7d0, #22c55e); box-shadow: 0 0 8px rgba(34,197,94,0.35); }
+
+/* Open state animations */
+.skills-popup.open .skills-backdrop {
+  opacity: 1;
+}
+
+.skills-popup.open .skills-sheet {
+  transform: translateY(0%);
+}
+
+.skills-popup.open .skills-grid .skill-icon {
+  animation: iconPop 400ms ease forwards;
+}
+
+.skills-popup.open .skills-grid .skill-icon:nth-child(1) { animation-delay: 40ms; }
+.skills-popup.open .skills-grid .skill-icon:nth-child(2) { animation-delay: 80ms; }
+.skills-popup.open .skills-grid .skill-icon:nth-child(3) { animation-delay: 120ms; }
+.skills-popup.open .skills-grid .skill-icon:nth-child(4) { animation-delay: 160ms; }
+.skills-popup.open .skills-grid .skill-icon:nth-child(5) { animation-delay: 200ms; }
+.skills-popup.open .skills-grid .skill-icon:nth-child(6) { animation-delay: 240ms; }
+.skills-popup.open .skills-grid .skill-icon:nth-child(7) { animation-delay: 280ms; }
+.skills-popup.open .skills-grid .skill-icon:nth-child(8) { animation-delay: 320ms; }
+.skills-popup.open .skills-grid .skill-icon:nth-child(9) { animation-delay: 360ms; }
+.skills-popup.open .skills-grid .skill-icon:nth-child(10) { animation-delay: 400ms; }
+
+@keyframes iconPop {
+  from { transform: translateY(12px) scale(0.96); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
 /* ========== Portfolio Section ========== */
 #portfolio {
   padding: 50px 0;
@@ -274,6 +491,11 @@ nav ul li a:hover::after {
   border-radius: 10px;
   position: relative;
   overflow: hidden;
+}
+
+/* Hide optional projects initially (revealed by JS) */
+.hidden-project {
+  display: none;
 }
 
 .work img {

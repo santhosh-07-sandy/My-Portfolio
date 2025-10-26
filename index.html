@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Santhosh D — Java Full Stack Developer | Spring Boot • MySQL • React Js</title>
-  <link rel="icon" type="image/jpg" href="images/fav.png">
+  <meta name="theme-color" content="#ff004f" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/fav.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/fav.png" />
+  <link rel="apple-touch-icon" href="images/fav.png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   <script src="https://kit.fontawesome.com/3143154987.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -14,32 +18,29 @@
   <div id="header">
     <div class="container">
       <nav>
-<h1>
-  <span style="color: #ff004f; font-size: 1.5em; font-weight: bold;">P</span>ortfolio.
-</h1>
+        <h1>
+          <span style="color: #ff004f; font-size: 1.5em; font-weight: bold;">P</span>ortfolio.
+        </h1>
 
+        <!-- Hamburger Menu Icon -->
+        <div id="menu-toggle" class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
 
+        <!-- Cancel Icon -->
+        <div id="menu-cancel" class="menu-cancel" onclick="closeMenu()">
+          <i class="fas fa-times"></i>
+        </div>
 
-  <!-- Hamburger Menu Icon -->
-  <div id="menu-toggle" class="menu-toggle" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
-
-  <!-- Cancel Icon -->
-  <div id="menu-cancel" class="menu-cancel" onclick="closeMenu()">
-    <i class="fas fa-times"></i>
-  </div>
-
-  <!-- Navigation Links -->
-  <ul id="sidemenu">
-    <li><a href="#header" onclick="closeMenu()">Home</a></li>
-    <li><a href="#about" onclick="closeMenu()">About</a></li>
-    <li><a href="#services" onclick="closeMenu()">Service</a></li>
-    <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
-    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-  </ul>
-</nav>
-
+        <!-- Navigation Links -->
+        <ul id="sidemenu">
+          <li><a href="#header" onclick="closeMenu()">Home</a></li>
+          <li><a href="#about" onclick="closeMenu()">About</a></li>
+          <li><a href="#services" onclick="closeMenu()">Service</a></li>
+          <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+          <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+      </nav>
 
       <div class="header-text">
         <p>Java Full Stack Developer</p>
@@ -49,73 +50,86 @@
   </div>
 
   <!-- ===== ABOUT SECTION ===== -->
-<div id="about">
-  <div class="container about-container">
-    <div class="about-col-1">
-      <img src="images/img_about.jpg" alt="Profile Image" class="about-img" />
-    </div>
-    <div class="about-col-2">
-      <h1 class="sub-title">About Me</h1>
-      <p class="about-intro">I am a passionate Full Stack Developer skilled in Java, Spring Boot, MySQL, and front-end development.</p>
-
-      <div class="tab-titles">
-        <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
-        <p class="tab-links" onclick="opentab('certifications', event)">Certifications</p>
-        <p class="tab-links" onclick="opentab('education', event)">Education</p>
+  <div id="about">
+    <div class="container about-container">
+      <div class="about-col-1">
+        <img src="images/img_about.jpg" alt="Profile Image" class="about-img" />
       </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">About Me</h1>
+        <p class="about-intro">I am a passionate Full Stack Developer skilled in Java, Spring Boot, MySQL, and front-end development.</p>
 
-      <div class="tab-contents active-tab fade-in" id="skills">
-        <ul>
-          <li><span>Java Full Stack Developer</span><br>Java, Spring Boot, MySQL, REST APIs, MVC, Postman, Git</li>
-          <li><span>Front-End Developer</span><br>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</li>
-          <li><span>Back-End Developer</span><br>Core Java, MySQL, JDBC, Spring Boot</li>
-        </ul>
-      </div>
+        <div class="tab-titles">
+          <p id="about-skills-link" class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
+          <p class="tab-links" onclick="opentab('certifications', event)">Certifications</p>
+          <p class="tab-links" onclick="opentab('education', event)">Education</p>
+        </div>
 
-      <div class="tab-contents fade-in" id="certifications">
-        <ul>
-          <li><span>Java Full Stack Developer — Besant Technologies</span><br>Comprehensive training in Java, Spring Boot, REST APIs, and full‑stack project development.</li>
-          <li><span>Full Stack Web Development Intern — Edu Tantur</span><br>Hands-on internship covering front-end and back-end development.</li>
-          <li><span>TCS iON Career Edge — Young Professional</span><br>Professional readiness and employability certification.</li>
-        </ul>
-      </div>
+        <div class="tab-contents active-tab fade-in" id="skills">
+          <ul>
+            <li><span>Java Full Stack Developer</span><br>Java, Spring Boot, MySQL, REST APIs, MVC, Postman, Git</li>
+            <li><span>Front-End Developer</span><br>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</li>
+            <li><span>Back-End Developer</span><br>Core Java, MySQL, JDBC, Spring Boot</li>
+          </ul>
+          <a href="#" id="about-skills-more" class="see-more-skill" title="See more skills"><i class="fa-solid fa-angles-down"></i></a>
+        </div>
 
-      <div class="tab-contents fade-in" id="education">
-        <ul>
-          <li><span>B.Sc. Computer Science</span><br>A.M Jain College, Chennai <br> (2021–2024) — CGPA: 6.93</li>
-          <li><span>HSC</span><br>WTMM Hr. Sec. School, Kanchipuram <br> (2020–2021) — CGPA: 8.21</li>
-          <li><span>SSLC</span><br>Govt Hr. Sec. School, Kanchipuram <br> (2018–2019) — CGPA: 7.14</li>
-        </ul>
+        <div class="tab-contents fade-in" id="certifications">
+          <ul>
+            <li><span>Java Full Stack Developer — Besant Technologies</span><br>Comprehensive training in Java, Spring Boot, REST APIs, and full‑stack project development.</li>
+            <li><span>Full Stack Web Development Intern — Edu Tantur</span><br>Hands-on internship covering front-end and back-end development.</li>
+            <li><span>TCS iON Career Edge — Young Professional</span><br>Professional readiness and employability certification.</li>
+          </ul>
+        </div>
+
+        <div class="tab-contents fade-in" id="education">
+          <ul>
+            <li><span>B.Sc. Computer Science</span><br>A.M Jain College, Chennai <br> (2021–2024) — CGPA: 6.93</li>
+            <li><span>HSC</span><br>WTMM Hr. Sec. School, Kanchipuram <br> (2020–2021) — CGPA: 8.21</li>
+            <li><span>SSLC</span><br>Govt Hr. Sec. School, Kanchipuram <br> (2018–2019) — CGPA: 7.14</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 
   <!-- ===== SERVICES SECTION ===== -->
   <div id="services">
     <div class="container">
       <h1 class="sub-title">My Services</h1>
       <div class="services-list">
-        <div>
+        <div id="service-fullstack" data-service="fullstack">
           <i class="fa-solid fa-layer-group"></i>
           <h2>Full Stack Developer</h2>
           <p>Building responsive, scalable, and efficient full stack applications.</p>
           <a href="https://github.com/santhosh-07-sandy/JAVA-Tutorial">Learn more</a>
         </div>
-        <div>
+        <div id="service-frontend" data-service="frontend">
           <i class="fa-solid fa-code"></i>
           <h2>Front End Developer</h2>
           <p>Creating user-friendly UI/UX with modern technologies.</p>
           <a href="https://github.com/santhosh-07-sandy/Restaurant-Website">Learn more</a>
         </div>
-        <div>
+        <div id="service-backend" data-service="backend">
           <i class="fa-brands fa-java"></i>
           <h2>Back End Developer</h2>
           <p>Server-side logic and database management using Java and MySQL.</p>
           <a href="https://github.com/santhosh-07-sandy/MySQL-Tutorial">Learn more</a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Skills Bottom Sheet Popup -->
+  <div id="skills-popup" class="skills-popup hidden">
+    <div id="skills-backdrop" class="skills-backdrop"></div>
+    <div class="skills-sheet">
+      <div class="skills-sheet-header">
+        <h3 id="skills-title">Skills</h3>
+        <button id="skills-close" class="skills-close" aria-label="Close">&times;</button>
+      </div>
+      <div id="skills-grid" class="skills-grid"></div>
+      <div id="skills-tooltip" class="skills-tooltip hidden"></div>
     </div>
   </div>
 
@@ -127,17 +141,17 @@
         <div class="work">
           <img src="images/img_1.jpg" alt="Employee Management System">
           <div class="layer">
-           <h3>Restaurant Website</h3>
+            <h3>Restaurant Website</h3>
             <p>Developed by using HTML5, CSS3, and JavaScript.</p>
             <a href="https://santhosh-07-sandy.github.io/Restaurant-Website/"><i class="fa-solid fa-up-right-from-square"></i></a>
           </div>
         </div>
         <div class="work">
-          <img src="images/img_2.jpg" alt="Bus Booking System">
+          <img src="images/img_2.jpg" alt="JS-Car-Game">
           <div class="layer">
-           <h3>Bus Booking Management System</h3>
-            <p>Developed by using Core Java and JDBC.</p>
-            <a href="https://github.com/santhosh-07-sandy/Bus-Booking-Management-System"><i class="fa-solid fa-up-right-from-square"></i></a>
+            <h3>JavaScript Car Game</h3>
+            <p>Developed by using HTML5, CSS3, and JavaScript.</p>
+            <a href="https://santhosh-07-sandy.github.io/js-car-game/"><i class="fa-solid fa-up-right-from-square"></i></a>
           </div>
         </div>
         <div class="work">
@@ -148,8 +162,16 @@
             <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
           </div>
         </div>
+        <div id="project-4" class="work hidden-project">
+          <img src="images/img_4.jpg" alt="Bus Booking System">
+          <div class="layer">
+            <h3>Bus Booking Management System</h3>
+            <p>Developed by using Core Java and JDBC.</p>
+            <a href="https://github.com/santhosh-07-sandy/Bus-Booking-Management-System"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
       </div>
-      <a href="#" class="btn">See More</a>
+      <a href="#" id="see-more-btn" class="btn">View More</a>
     </div>
   </div>
 
