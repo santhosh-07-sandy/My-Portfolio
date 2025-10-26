@@ -285,10 +285,32 @@ nav ul li a:hover::after {
   display: inline-block;
 }
 
+.services-list div {
+  transition: background 220ms ease, transform 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.services-list div i,
+.services-list div h2,
+.services-list div p,
+.services-list div a {
+  transition: color 220ms ease, opacity 220ms ease;
+}
+
 .services-list div:hover {
   background: #ff004f;
   transform: translateY(-10px);
 }
+
+/* Ensure smooth readable color on hover */
+.services-list div:hover i,
+.services-list div:hover h2,
+.services-list div:hover p,
+.services-list div:hover a {
+  color: #ffffff;
+}
+
+.services-list div a { color: #fff; opacity: 0.85; }
+.services-list div:hover a { opacity: 1; }
 
 /* ===== Services interactions ===== */
 .services-list div {
