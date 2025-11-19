@@ -93,15 +93,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const allWorks = Array.from(workList.querySelectorAll(".work"));
   const extraWorks = allWorks.slice(3); // everything after first 3
   
-  // Ensure extras are hidden initially
-  extraWorks.forEach((el) => el.classList.add("hidden-project"));
-  toggleBtn.textContent = "View More";
+  // Check if we're on mobile (show only 3 initially)
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    // Ensure extras are hidden initially on mobile
+    extraWorks.forEach((el) => el.classList.add("hidden-project"));
+    toggleBtn.textContent = "See More";
+  } else {
+    // Show all projects on larger screens
+    extraWorks.forEach((el) => el.classList.remove("hidden-project"));
+    toggleBtn.style.display = "none";
+  }
 
   toggleBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const isHidden = extraWorks[0]?.classList.contains("hidden-project");
+    
     extraWorks.forEach((el) => el.classList.toggle("hidden-project"));
-    toggleBtn.textContent = isHidden ? "View Less" : "View More";
+    toggleBtn.textContent = isHidden ? "See Less" : "See More";
+  });
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    const isMobileNow = window.innerWidth <= 768;
+    
+    if (!isMobileNow) {
+      // Show all projects when switching to larger screen
+      extraWorks.forEach((el) => el.classList.remove("hidden-project"));
+      toggleBtn.style.display = "none";
+    } else {
+      // Reset to mobile view
+      extraWorks.forEach((el) => el.classList.add("hidden-project"));
+      toggleBtn.textContent = "See More";
+      toggleBtn.style.display = "block";
+    }
   });
 });
 
@@ -142,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ["devicon-java-plain", "Java"],
       ["devicon-mysql-plain", "MySQL"],
       ["devicon-spring-plain", "Spring Boot"],
-      ["fa-solid fa-api", "Postman API"],
+      ["fa-solid fa-plug", "Postman API"], // Changed to fa-plug for better API representation
     ],
     frontend: [
       ["devicon-html5-plain", "HTML"],
@@ -159,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ["devicon-java-plain", "Java"],
       ["devicon-mysql-plain", "MySQL"],
       ["devicon-spring-plain", "Spring Boot"],
-      ["fa-solid fa-api", "Postman API"],
+      ["fa-solid fa-plug", "Postman API"], // Changed to fa-plug for better API representation
     ],
   };
 
@@ -187,8 +213,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const open = (serviceKey, withPercent = false) => {
+    console.log(`Opening skills popup for: ${serviceKey}, withPercent: ${withPercent}`); // Debug log
     grid.innerHTML = "";
     const list = sets[serviceKey] || [];
+    console.log("Skills list:", list); // Debug log
+    
     if (withPercent) {
       const mapPct = {
         HTML: 90,
@@ -205,7 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
         MySQL: 80,
         "Spring Boot": 75,
       };
-      list.forEach(([cls, label]) => grid.appendChild(createItem(cls, label, mapPct[label] || 70)));
+      list.forEach(([cls, label]) => {
+        console.log(`Creating skill item: ${cls} - ${label}`); // Debug log
+        grid.appendChild(createItem(cls, label, mapPct[label] || 70));
+      });
     } else {
       list.forEach(([cls, label]) => grid.appendChild(icon(cls, label)));
     }
@@ -227,6 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (aboutMore) {
     aboutMore.addEventListener("click", (e) => {
       e.preventDefault();
+      console.log("Opening skills popup with fullstack skills"); // Debug log
       open("fullstack", true);
     });
   }

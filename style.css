@@ -424,6 +424,22 @@ nav ul li a:hover::after {
   color: #ffffff !important;
 }
 
+/* Ensure MongoDB icon displays properly */
+.skills-grid .skill-icon i.devicon-mongodb-plain {
+  color: #4db33d !important; /* MongoDB green color */
+}
+
+/* Ensure Postman API icon displays properly */
+.skills-grid .skill-icon i.fa-plug {
+  font-size: 32px !important;
+  color: #ff6c37 !important; /* Postman orange color */
+}
+
+/* Fallback for any missing icons */
+.skills-grid .skill-icon i[class*="fa-"] {
+  font-size: 32px !important;
+}
+
 /* Percentage meter */
 .skill-meter {
   width: 100%;
@@ -843,6 +859,98 @@ form .btn2 {
     color: #61b752;
     margin-top: -40px;
     display: block;
+  }
+
+  /* ========== Portfolio Responsive (Mobile) ========== */
+  .work-list {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .work {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .layer {
+    padding: 0 30px;
+    font-size: 14px;
+  }
+
+  .layer h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .layer p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .layer a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+  }
+
+  .btn {
+    margin: 30px auto;
+    padding: 14px 40px;
+    font-size: 16px;
+  }
+
+  /* Show only first 3 projects on mobile initially */
+  .hidden-project {
+    display: none;
+  }
+
+  #see-more-btn {
+    display: block;
+    margin: 30px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+    font-size: 16px;
+  }
+
+  #see-more-btn:hover {
+    background: #ff004f;
+  }
+}
+
+/* ========== Responsive (Tablet) ========== */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .work-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    gap: 30px;
+  }
+
+  /* Show all projects on tablet (no need for see more) */
+  .hidden-project {
+    display: block;
+  }
+
+  #see-more-btn {
+    display: none; /* Hide see more button on tablet */
+  }
+}
+
+/* ========== Responsive (Desktop) ========== */
+@media only screen and (min-width: 1025px) {
+  /* Show all projects on desktop */
+  .hidden-project {
+    display: block;
+  }
+
+  #see-more-btn {
+    display: none; /* Hide see more button on desktop */
   }
 }
 
