@@ -83,15 +83,16 @@ if (form && submitButton) {
   });
 }
 
-// ===== Portfolio: View More / View Less toggle =====
+// ===== Portfolio: See More/Less functionality =====
 document.addEventListener("DOMContentLoaded", () => {
+  const workList = document.querySelector(".work-list");
   const toggleBtn = document.getElementById("see-more-btn");
-  const workList = document.querySelector("#portfolio .work-list");
-  if (!toggleBtn || !workList) return;
+  
+  if (!workList || !toggleBtn) return;
 
   const allWorks = Array.from(workList.querySelectorAll(".work"));
   const extraWorks = allWorks.slice(3); // everything after first 3
-
+  
   // Ensure extras are hidden initially
   extraWorks.forEach((el) => el.classList.add("hidden-project"));
   toggleBtn.textContent = "View More";
@@ -134,11 +135,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ["devicon-javascript-plain", "JavaScript"],
       ["devicon-tailwindcss-plain", "Tailwind CSS"],
       ["devicon-react-original", "React"],
+      ["devicon-nodejs-plain", "Node.js"],
+      ["devicon-mongodb-plain", "MongoDB"],
       ["devicon-git-plain", "Git"],
       ["devicon-github-original", "GitHub"],
       ["devicon-java-plain", "Java"],
       ["devicon-mysql-plain", "MySQL"],
       ["devicon-spring-plain", "Spring Boot"],
+      ["fa-solid fa-api", "Postman API"],
     ],
     frontend: [
       ["devicon-html5-plain", "HTML"],
@@ -150,9 +154,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ["devicon-github-original", "GitHub"],
     ],
     backend: [
+      ["devicon-nodejs-plain", "Node.js"],
+      ["devicon-mongodb-plain", "MongoDB"],
       ["devicon-java-plain", "Java"],
       ["devicon-mysql-plain", "MySQL"],
       ["devicon-spring-plain", "Spring Boot"],
+      ["fa-solid fa-api", "Postman API"],
     ],
   };
 
@@ -189,6 +196,9 @@ document.addEventListener("DOMContentLoaded", () => {
         JavaScript: 80,
         "Tailwind CSS": 75,
         React: 65,
+        "Node.js": 75,
+        "MongoDB": 70,
+        "Postman API": 80,
         Git: 80,
         GitHub: 80,
         Java: 85,
