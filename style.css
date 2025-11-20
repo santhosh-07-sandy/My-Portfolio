@@ -607,20 +607,27 @@ nav ul li a:hover::after {
 /* ========== Contact Section ========== */
 .contact-left {
   flex-basis: 35%;
+  padding-right: 20px;
 }
 
 .contact-right {
   flex-basis: 60%;
+  max-width: 100%;
 }
 
 .contact-left p {
-  margin-top: 30px;
+  margin-top: 25px;
+  line-height: 1.6;
+  color: #ddd;
 }
 
 .contact-left p i {
   color: #ff004f;
   margin-right: 15px;
-  font-size: 25px;
+  font-size: 22px;
+  vertical-align: middle;
+  width: 24px;
+  display: inline-block;
 }
 
 .social-icons {
@@ -629,11 +636,12 @@ nav ul li a:hover::after {
 
 .social-icons a {
   text-decoration: none;
-  font-size: 30px;
+  font-size: 26px;
   margin-right: 15px;
+  margin-bottom: 10px;
   color: #ababab;
   display: inline-block;
-  transition: transform 0.5s;
+  transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
@@ -644,30 +652,108 @@ nav ul li a:hover::after {
 .btn.btn2 {
   display: inline-block;
   background: #ff004f;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: auto;
+  min-width: 150px;
+}
+
+.btn.btn2:hover {
+  background: #e60046;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 0, 79, 0.3);
 }
 
 .contact-right form {
   width: 100%;
+  max-width: 100%;
 }
 
 form input,
 form textarea {
   width: 100%;
-  border: 0;
+  border: 1px solid #333;
   outline: none;
   background: #262626;
-  padding: 15px;
-  margin: 15px 0;
+  padding: 14px 16px;
+  margin: 10px 0;
   color: #fff;
-  font-size: 18px;
-  border-radius: 6px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-form .btn2 {
-  padding: 14px 60px;
-  font-size: 18px;
-  margin-top: 20px;
-  cursor: pointer;
+form input:focus,
+form textarea:focus {
+  border-color: #ff004f;
+  box-shadow: 0 0 0 2px rgba(255, 0, 79, 0.2);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+#msg {
+  display: block;
+  margin-top: 15px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 15px;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#msg.show {
+  opacity: 1;
+  background: rgba(97, 183, 82, 0.1);
+  color: #61b752;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+    padding: 0;
+  }
+  
+  .contact-right {
+    margin-top: 40px;
+  }
+  
+  form input,
+  form textarea {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+  
+  .btn.btn2 {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .social-icons {
+    text-align: center;
+  }
+  
+  .social-icons a {
+    font-size: 28px;
+    margin: 0 10px 10px 0;
+  }
+  
+  #msg {
+    margin-top: 10px;
+    font-size: 14px;
+  }
 }
 
 /* ========== Footer ========== */
