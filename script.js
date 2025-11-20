@@ -167,8 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ["devicon-github-original", "GitHub"],
       ["devicon-java-plain", "Java"],
       ["devicon-mysql-plain", "MySQL"],
-      ["devicon-spring-plain", "Spring Boot"],
-      ["fa-solid fa-plug", "Postman API"], // Changed to fa-plug for better API representation
+      ["devicon-spring-plain", "Spring Boot"]
     ],
     frontend: [
       ["devicon-html5-plain", "HTML"],
@@ -184,8 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ["devicon-mongodb-plain", "MongoDB"],
       ["devicon-java-plain", "Java"],
       ["devicon-mysql-plain", "MySQL"],
-      ["devicon-spring-plain", "Spring Boot"],
-      ["fa-solid fa-plug", "Postman API"], // Changed to fa-plug for better API representation
+      ["devicon-spring-plain", "Spring Boot"]
     ],
   };
 
