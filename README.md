@@ -1,96 +1,42 @@
-# My Portfolio
+# 👨‍💻 Santhosh D - Portfolio
 
-A modern, responsive portfolio website showcasing my skills, projects, and professional experience as a Java Full Stack Developer.
+Welcome to my personal portfolio website! This project showcases my skills, certifications, and projects as a **Java Full Stack Developer**.
 
-## 🚀 Features
+## 🚀 Live Demo
+[View Portfolio](https://santhosh-07-sandy.github.io/My-Portfolio/)  
+*(Note: Replace with your actual deployment link if different)*
 
-- **Responsive Design**: Optimized for all devices (desktop, tablet, mobile)
-- **Modern UI/UX**: Clean, professional interface with smooth animations
-- **Interactive Elements**: Dynamic content loading and user interactions
-- **Project Showcase**: Detailed presentation of personal and professional projects
-- **Contact Section**: Easy ways to get in touch
+## 🛠️ Tech Stack
+- **Frontend**: HTML5, CSS3, JavaScript, React.js, Bootstrap
+- **Backend**: Java, Spring Boot, Node.js
+- **Database**: MySQL, MongoDB
+- **Tools**: Git, Postman, VS Code
 
-## 🛠️ Technologies Used
+## 📂 Sections
+1.  **Header**: Navigation and Hero section.
+2.  **About**: Professional summary, Skills, Certifications, and Education tabs.
+3.  **Services**: Overview of Full Stack, Frontend, and Backend development services.
+4.  **Portfolio**: Showcase of projects like *QuickGPT*, *Restaurant Website*, *Car Game*, and *Bus Booking System*.
+5.  **Contact**: Contact form (integrated with Google Sheets) and social links.
 
-- **Frontend**: 
-  - HTML5
-  - CSS3 (with modern features like Grid and Flexbox)
-  - Vanilla JavaScript (ES6+)
-- **Design**: 
-  - Responsive design principles
-  - Modern CSS animations and transitions
-  - Component-based structure
+## 🔗 Connect with Me
+- **GitHub**: [santhosh-07-sandy](https://github.com/santhosh-07-sandy)
+- **LinkedIn**: [Santhosh D](https://www.linkedin.com/in/santhosh2k3/)
+- **Email**: santhosh1917santo@gmail.com
 
-## 📁 Project Structure
-
-```
-My-Portfolio/
-├── index.html          # Main HTML file
-├── style.css           # Styling and animations
-├── script.js           # JavaScript functionality
-├── images/             # Image assets
-├── Resume_Santhosh_D_Java_FullStack_Developer_BSC_2024.pdf  # Resume
-└── README.md           # This file
-```
-
-## 🎯 Sections
-
-1. **Hero Section**: Introduction and call-to-action
-2. **About Me**: Personal background and overview
-3. **Skills**: Technical skills and competencies
-4. **Projects**: Portfolio of work with detailed descriptions
-5. **Experience**: Professional journey and achievements
-6. **Education**: Academic background
-7. **Contact**: Contact information and social links
-
-## 🌟 Key Features
-
-- **Smooth Scrolling**: Navigation between sections
-- **Interactive Project Cards**: Hover effects and project details
-- **Dynamic Content**: JavaScript-powered interactions
-- **Form Validation**: Contact form with proper validation
-- **Optimized Performance**: Fast loading and smooth animations
-
-## 📱 Responsive Breakpoints
-
-- Desktop: 1200px and above
-- Tablet: 768px - 1199px
-- Mobile: 320px - 767px
-
-## 🚀 Getting Started
-
-To run this project locally:
-
+## 🏃‍♂️ How to Run Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/My-Portfolio.git
+   git clone https://github.com/santhosh-07-sandy/My-Portfolio.git
    ```
-
-2. Navigate to the project directory:
+2. Navigate to the project folder:
    ```bash
    cd My-Portfolio
    ```
-
-3. Open `index.html` in your preferred web browser
-
-No build process or dependencies required - it's a static website!
-
-## 🎨 Customization
-
-You can easily customize this portfolio by:
-
-1. **Updating Content**: Edit the HTML files to change text, add projects, or modify sections
-2. **Styling**: Modify `style.css` to change colors, fonts, and layout
-3. **Adding Features**: Extend `script.js` to add new interactive elements
-
-## 📧 Contact
-
-Feel free to reach out if you have any questions or collaboration opportunities!
+3. Open `index.html` in your browser.
 
 ## 📄 License
-
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
-
-⭐ If you like this portfolio, consider giving it a star!
+Made with ❤️ by [Santhosh D](https://github.com/santhosh-07-sandy)
