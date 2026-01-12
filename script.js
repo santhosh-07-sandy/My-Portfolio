@@ -87,15 +87,15 @@ if (form && submitButton) {
 document.addEventListener("DOMContentLoaded", () => {
   const workList = document.querySelector(".work-list");
   const toggleBtn = document.getElementById("see-more-btn");
-  
+
   if (!workList || !toggleBtn) return;
 
   const allWorks = Array.from(workList.querySelectorAll(".work"));
   const extraWorks = allWorks.slice(3); // everything after first 3
-  
+
   // Check if we're on mobile (show only 3 initially)
   const isMobile = window.innerWidth <= 768;
-  
+
   if (isMobile) {
     // Ensure extras are hidden initially on mobile
     extraWorks.forEach((el) => el.classList.add("hidden-project"));
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const isHidden = extraWorks[0]?.classList.contains("hidden-project");
-    
+
     extraWorks.forEach((el) => el.classList.toggle("hidden-project"));
     toggleBtn.textContent = isHidden ? "See Less" : "See More";
   });
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle window resize
   window.addEventListener('resize', () => {
     const isMobileNow = window.innerWidth <= 768;
-    
+
     if (!isMobileNow) {
       // Show all projects when switching to larger screen
       extraWorks.forEach((el) => el.classList.remove("hidden-project"));
@@ -211,11 +211,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const open = (serviceKey, withPercent = false) => {
-    console.log(`Opening skills popup for: ${serviceKey}, withPercent: ${withPercent}`); // Debug log
+
     grid.innerHTML = "";
     const list = sets[serviceKey] || [];
-    console.log("Skills list:", list); // Debug log
-    
+
+
     if (withPercent) {
       const mapPct = {
         HTML: 90,
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Spring Boot": 75,
       };
       list.forEach(([cls, label]) => {
-        console.log(`Creating skill item: ${cls} - ${label}`); // Debug log
+
         grid.appendChild(createItem(cls, label, mapPct[label] || 70));
       });
     } else {
@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (aboutMore) {
     aboutMore.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log("Opening skills popup with fullstack skills"); // Debug log
+
       open("fullstack", true);
     });
   }
@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const tile = target && target.closest ? target.closest(".skill-icon") : null;
       if (!tile) return;
       const rect = sheet.getBoundingClientRect();
-      showTip(tile.dataset.label || "", tile.dataset.pct || "", rect.left + rect.width/2, rect.top + rect.height/2);
+      showTip(tile.dataset.label || "", tile.dataset.pct || "", rect.left + rect.width / 2, rect.top + rect.height / 2);
     });
     grid.addEventListener("mouseout", (e) => {
       const toEl = e.relatedTarget;
